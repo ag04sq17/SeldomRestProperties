@@ -1,0 +1,176 @@
+﻿<!--
+Build a clean, modern, single-page static website for a San Antonio, TX residential rental brand called "Seldom Rest Properties."
+
+Positioning:
+- Affordable, family-focused rentals
+- Trustworthy and local (San Antonio)
+- In business for 10 years
+
+Page sections:
+1) Hero banner
+   - Brand name + short tagline
+   - Primary CTA button: "Contact Us" (scrolls to contact section)
+   - Secondary CTA: "Learn More" (scrolls to About)
+2) About
+   - Short story + mission
+   - Emphasize 10 years serving San Antonio families
+3) Property Focus (no listings)
+   - Describe what we offer (clean, well-maintained homes, responsive management, safe neighborhoods)
+   - Bullet points / highlights are OK
+4) Contact
+   - Simple placeholder form (Name, Email, Message) that does not actually submit anywhere
+   - Also show email/phone placeholders and service area (San Antonio)
+
+Design requirements:
+- Modern suburban real estate vibe (not rustic, not corporate)
+- Minimal, professional, warm, family-friendly
+- Subtle nod to the name "Seldom Rest" (calm/home/steadiness) without looking like a farm site
+- Responsive/mobile-first, good spacing, clear typography
+
+Technical:
+- Pure HTML + CSS, minimal vanilla JS only (for smooth scrolling / small interactions)
+- No frameworks, no build tools
+-->
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Seldom Rest Properties — San Antonio, TX</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Seldom Rest Properties — Affordable, family-friendly rental homes in San Antonio. Over 10 years of local service and dependable management.">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#">Seldom Rest <span class="brand-quiet">Properties</span></a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+                <span class="hamburger" aria-hidden="true"></span>
+            </button>
+            <nav id="primary-nav" class="primary-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#homes">Homes</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home" aria-label="Hero">
+            <div class="container hero-inner">
+                <div class="hero-copy">
+                    <h1>Seldom Rest Properties</h1>
+                    <p class="tagline">Affordable, family-focused rentals across San Antonio — steady homes, reliable care.</p>
+                    <div class="hero-ctas">
+                        <a class="btn btn-primary" href="#contact">Contact Us</a>
+                        <a class="btn btn-outline" href="#about">Learn More</a>
+                    </div>
+                    <p class="cred">Local • Family-focused • 10+ years serving San Antonio</p>
+                </div>
+
+                <div class="hero-art" aria-hidden="true">
+                    <div class="home-card">
+                        <div class="roof"></div>
+                        <div class="body">
+                            <div class="window"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about">
+            <div class="container">
+                <h2>About Us</h2>
+                <p class="lead">For more than a decade, Seldom Rest Properties has provided clean, well-maintained rental homes for families across San Antonio. We're a local team that believes a steady, comfortable home is the foundation for family life.</p>
+                <p>We focus on clear communication, respectful service, and timely maintenance. Our mission is to offer affordable, dependable housing with the human touch of a neighbor — not a faceless corporation.</p>
+            </div>
+        </section>
+
+        <section id="homes" class="section homes">
+            <div class="container">
+                <h2>What Tenants Can Expect</h2>
+                <p class="subtle">Highlighted features of our service and properties — no listings, just clarity about our approach.</p>
+
+                <div class="features">
+                    <article class="feature-card">
+                        <h3>Well‑Maintained Homes</h3>
+                        <p>Thoughtful upkeep and practical updates keep homes comfortable and move‑in ready.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <h3>Responsive Management</h3>
+                        <p>Local staff available for timely repairs and clear communication.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <h3>Family‑Friendly Neighborhoods</h3>
+                        <p>Properties in safe, community-minded areas around San Antonio.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <h3>Transparent Leasing</h3>
+                        <p>Simple lease terms and a straightforward move‑in process.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <h3>Affordable Options</h3>
+                        <p>Value-focused homes that prioritize essentials over gimmicks.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container contact-grid">
+                <div class="contact-form-wrap">
+                    <h2>Contact Us</h2>
+                    <p class="subtle">Fill out the form and we'll reach out. This is a placeholder form for demo purposes.</p>
+                    <form id="contact-form" onsubmit="return false;" aria-label="Contact form">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name">
+
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email">
+
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="How can we help?"></textarea>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="send-btn">Send Message</button>
+                            <button type="reset" class="btn btn-outline">Reset</button>
+                        </div>
+                    </form>
+                    <p id="placeholder-note" class="note" hidden>This is a placeholder form — no messages are sent.</p>
+                </div>
+
+                <aside class="contact-info">
+                    <div class="info-card">
+                        <h3>Get in touch</h3>
+                        <p>Email: <a href="mailto:info@seldomrest.properties">tucker@seldomrest.properties</a></p>
+                        <p>Phone: <a href="tel:+12102223333">(210) 802-5515</a></p>
+                        <p>Serving San Antonio, TX</p>
+                        <p class="muted">Proudly serving local families for over 10 years.</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; <span id="year"></span> Seldom Rest Properties • San Antonio, TX</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
